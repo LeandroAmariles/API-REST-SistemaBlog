@@ -1,13 +1,21 @@
 package com.sistema.blog.sistemablogspringbootapirest.dto;
 
+import com.sun.istack.NotNull;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class ComentarioDTO {
 
     private Long id;
-
+    @NotEmpty(message = "El nombre no debe estar vacio")
     private String nombre;
-
+    @Email
+    @NotEmpty(message = "El email no debe estar vacio")
     private String email;
-
+    @NotEmpty
+    @Size(min = 10, message = "El cuerpo del comentario debe tener almenos 10 carcateres")
     private String cuerpo;
 
     public ComentarioDTO() {

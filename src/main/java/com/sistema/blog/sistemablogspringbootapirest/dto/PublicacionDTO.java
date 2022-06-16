@@ -1,10 +1,20 @@
 package com.sistema.blog.sistemablogspringbootapirest.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class PublicacionDTO {
 
     private Long id;
+
+    @NotEmpty
+    @Size(min = 2,message = "El titulo de la publicacion debe tener almenos 2 caracteres")
     private String titulo;
+    @NotEmpty
+    @Size(min = 10,message = "La descripcion de la publicacion debe tener almenos 10 caracteres")
     private String descripcion;
+    @NotEmpty
+    @Size(min = 2,message = "El contenido de la publicacion debe tener almenos 2 caracteres")
     private String contenido;
 
     public PublicacionDTO() {
